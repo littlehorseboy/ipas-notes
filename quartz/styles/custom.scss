@@ -1,3 +1,27 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// 搜尋視窗：遮罩改成深色、不模糊
+.search-container {
+  backdrop-filter: none !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+}
+
+// 搜尋框和結果區改成實色背景
+.search-container .search-space {
+  background: var(--light);
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.search-container .search-space > * {
+  background: var(--light);
+}
+
+// 自動補全的灰字提示層：保持透明，不擋住輸入框
+.search-container .ghost-text {
+  background: transparent !important;
+  pointer-events: none;
+}
